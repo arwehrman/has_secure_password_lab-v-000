@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'users/new'
-  post 'users/create'
-  get 'users/home' => 'users#show'
-
-  resources :sessions
+  resources :users, only: [:index, :new, :create]
+  resources :sessions, only: [:new, :create]
 end
